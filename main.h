@@ -1,5 +1,6 @@
 #ifndef main_h
 #define main_h
 
+void _printf(char *str, ...);
 int _printf(const char *format, ...);
 #endif /* main_h  */
