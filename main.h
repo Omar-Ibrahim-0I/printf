@@ -18,4 +18,5 @@ typedef struct format
 void print_str(va_list arg);
 void print_char(va_list arg);
 void print_percent(va_list arg);
+int _strlen(const char *str);
 #endif /* main_h  */

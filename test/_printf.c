@@ -1,5 +1,4 @@
 #include <stdarg.h>
-#include <string.h>
 #include <unistd.h>
 #include "main.h"
 
@@ -17,8 +16,8 @@ int _printf(const char *format, ...)
 		{'s', &print_str},
 		{'%', &print_percent}
 	};
-	int i = 0, j = 0, len = strlen(format);
-	
+	int i = 0, j = 0, len = _strlen(format);
+
 	va_start(args, format);
 	while (i < len)
 	{
@@ -43,5 +42,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(args);
-	return 1;
+	return (0);
 }
