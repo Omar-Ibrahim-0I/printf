@@ -53,17 +53,17 @@ int print_d(va_list args)
 }
 /**
  * print_i - function that prints i
- *@arg: it is a parameter
+ * @arg: it is a parameter
  * Return: int
  */
 int print_i(va_list arg)
 {
-return (print_d(arg));
+	return (print_d(arg));
 }
 
 /**
  * count_digits - function that prints i
- *@num: it is a parameter
+ * @num: it is a parameter
  * Return: int
  */
 int count_digits(int num)
@@ -83,4 +83,66 @@ int count_digits(int num)
 	num = num / 10;
 	}
 	return (count);
+}
+
+/**
+ * print_b - function that prints i
+ * @arg: it is a parameter
+ * Return: int
+ */
+int print_b(va_list arg)
+{
+	int number = va_arg(arg, int);
+	int counter = count_bits(number);
+	int sum = 0;
+
+	if (number == 0)
+	{
+		write(STDOUT_FILENO, "0", 1);
+		sum++;
+	}
+	else
+	{
+		char *bit = malloc(counter * sizeof(char));
+		int i = 0;
+	if (bit == NULL)
+		return (-1);
+
+	i = counter - 1;
+	while (number > 0)
+	{
+		bit[i] = (number % 2) + '0';
+		number = number / 2;
+		i--;
+	}
+
+	i = 0;
+		while (i < counter)
+		{
+			write(STDOUT_FILENO, &bit[i], 1);
+			sum++;
+			i++;
+		}
+		free(bit);
+	}
+
+	return (sum);
+}
+/**
+ * count_bits - function that prints i
+ * @number: it is a parameter
+ * Return: int
+ */
+int count_bits(int number)
+{
+	int counter = 0;
+
+	if (number == 0)
+		return (1);
+	while (number > 0)
+	{
+		counter++;
+		number = number / 2;
+	}
+	return (counter);
 }
