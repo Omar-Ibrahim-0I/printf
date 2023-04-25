@@ -19,4 +19,7 @@ int print_str(va_list arg);
 int print_char(va_list arg);
 int print_percent(va_list arg);
 int _strlen(const char *str);
+int print_d(va_list arg);
+int print_i(va_list arg);
+int count_digits(int num);
 #endif /* main_h  */

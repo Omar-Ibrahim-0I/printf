@@ -5,6 +5,7 @@
 /**
  * print_str - a function
  * @arg: param
+ * Return: int
  */
 int print_str(va_list arg)
 {
@@ -17,6 +18,7 @@ int print_str(va_list arg)
 /**
  * print_char - a function
  * @arg: param
+ * Return: int
  */
 int print_char(va_list arg)
 {
@@ -30,6 +32,7 @@ int print_char(va_list arg)
 /**
  * print_percent - a function
  * @arg: param
+ * Return: int
  */
 int print_percent(__attribute__((unused)) va_list arg)
 {

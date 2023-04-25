@@ -14,7 +14,9 @@ int _printf(const char *format, ...)
 	fr formates[] = {
 		{'c', &print_char},
 		{'s', &print_str},
-		{'%', &print_percent}
+		{'%', &print_percent},
+		{'d', &print_d},
+		{'i', &print_i}
 	};
 	int i = 0, j = 0, len = _strlen(format);
 	int byte_sum = 0;
@@ -26,7 +28,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			while (j < 3)
+			while (j < 5)
 			{
 				if (formates[j].c == format[i + 1])
 				{
@@ -36,7 +38,7 @@ int _printf(const char *format, ...)
 				}
 				j++;
 			}
-			if (j >= 3)
+			if (j >= 5)
 			{
 				write(STDOUT_FILENO, &format[i], 1);
 				byte_sum++;
