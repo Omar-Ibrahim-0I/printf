@@ -1,5 +1,6 @@
 #ifndef main_h
 #define main_h
+#define buffer_1024_local 1024
 #include <stdarg.h>
 
 int _printf(const char *format, ...);
