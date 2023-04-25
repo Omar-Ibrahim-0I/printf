@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 	fr formates[] = {
 		{'c', &print_char},
 		{'s', &print_str},
-		{'%', &print_percent}
 	};
 	int i = 0, j = 0, len = strlen(format);
 	
