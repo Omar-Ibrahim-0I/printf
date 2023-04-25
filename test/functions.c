@@ -18,3 +18,7 @@ void print_char(va_list arg)
 
 }
 
+void print_percent( __attribute__((unused)) va_list arg)
+{
+	write(STDOUT_FILENO, "%%", 1);
+}

@@ -15,6 +15,7 @@ int _printf(const char *format, ...)
 	fr formates[] = {
 		{'c', &print_char},
 		{'s', &print_str},
+		{'%', &print_percent}
 	};
 	int i = 0, j = 0, len = strlen(format);
 	
@@ -26,12 +27,14 @@ int _printf(const char *format, ...)
 			while (j < 3)
 			{
 				if (formates[j].c == format[i + 1])
+				{
 					formates[j].f(args);
+					i++;
+					break;
+				}
 				j++;
 			}
-		}
-		else if (format[i -1] == '%')
-		{
+			j = 0;
 		}
 		else
 		{

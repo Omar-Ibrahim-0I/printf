@@ -7,5 +7,7 @@ int main(void)
 	_printf("all\n");
 	_printf("%c\n", 'a');
 	printf("Character:[%s]\n", "sdfsdfaaaaaa");
+	_printf("Percent:[%%]\n");
+	printf("Character:[%s]\n", "sdfsdfaaaaaa");
 	return 1;
 }
