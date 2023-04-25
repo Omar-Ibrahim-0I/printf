@@ -17,8 +17,11 @@ int _printf(const char *format, ...)
 		{'%', &print_percent}
 	};
 	int i = 0, j = 0, len = _strlen(format);
+	int byte_sum = 0;
 
 	va_start(args, format);
+	if (!format)
+		return (-1);
 	while (i < len)
 	{
 		if (format[i] == '%')
@@ -27,22 +30,26 @@ int _printf(const char *format, ...)
 			{
 				if (formates[j].c == format[i + 1])
 				{
-					formates[j].f(args);
+					byte_sum += formates[j].f(args);
 					i++;
 					break;
 				}
 				j++;
 			}
 			if (j >= 3)
+			{
 				write(STDOUT_FILENO, &format[i], 1);
+				byte_sum++;
+			}
 			j = 0;
 		}
 		else
 		{
 			write(STDOUT_FILENO, &format[i], 1);
+			byte_sum++;
 		}
 		i++;
 	}
 	va_end(args);
-	return (0);
+	return (byte_sum);
 }

@@ -12,11 +12,11 @@ int _printf(const char *format, ...);
 typedef struct format
 {
 	char c;
-	void (*f)(va_list);
+	int (*f)(va_list);
 } fr;
 
-void print_str(va_list arg);
-void print_char(va_list arg);
-void print_percent(va_list arg);
+int print_str(va_list arg);
+int print_char(va_list arg);
+int print_percent(va_list arg);
 int _strlen(const char *str);
 #endif /* main_h  */
