@@ -33,6 +33,8 @@ int _printf(const char *format, ...)
 				}
 				j++;
 			}
+			if (j >= 3)
+				write(STDOUT_FILENO, &format[i], 1);
 			j = 0;
 		}
 		else
