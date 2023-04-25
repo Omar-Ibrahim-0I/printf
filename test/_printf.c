@@ -12,14 +12,10 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	fr formates[] = {
-		{'c', &print_char},
-		{'s', &print_str},
-		{'%', &print_percent},
-		{'d', &print_d},
-		{'i', &print_i}
+		{'c', &print_char}, {'s', &print_str}, {'%', &print_percent},
+		{'d', &print_d}, {'i', &print_i}
 	};
-	int i = 0, j = 0, len = _strlen(format);
-	int byte_sum = 0;
+	int i = 0, j = 0, len = _strlen(format), byte_sum = 0;
 
 	va_start(args, format);
 	if (!format)
